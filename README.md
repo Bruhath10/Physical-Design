@@ -83,7 +83,25 @@ Day-3 started with the usage of an important tool, **ngspice**. SPICE deck gener
 ```
 M1 out in Vdd Vdd pmos w=0.375u L=0.25u
 M2 out in 0 0 nmos w=0.375u L=0.25u
+cload out 0 10f
+
+Vdd Vdd 0 2.5
+Vin in 0 2.5
+
+.op
+.dc Vin 0 2.5 0.05
+
+.LIB "tsmc_025um_model.mod" CMOS_MODELS
+.end
 ```
+
+**Command for Transient Analysis**
+```
+.tran 1n 20n
+```
+
+## Lab
+
 
 
 

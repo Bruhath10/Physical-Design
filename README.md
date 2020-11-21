@@ -20,3 +20,4 @@ PicoRV32 was introduced. It is a is a CPU core that implements the RISC-V RV32IM
 - Qflow : Tool Chain for complete RTS2GDS flow
 The required tools were installed and working was checked with a sample design file.
 ## Lab
+Sample Design layout in Magic

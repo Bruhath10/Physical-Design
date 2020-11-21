@@ -4,7 +4,7 @@ A Workshop on VLSI SoC / Physical Design using Open-Source EDA tools by The VSD 
 ## Contents
 1. Day 1: study various components of RISC-V microprocessor based SoC and review RISC-V picoSoC
 
-## 1. Day 1: Study various components of RISC-V microprocessor based SoC and review RISC-V picoSoC 
+## 1. Day 1: Study of RISC-V microprocessor based SoC, review RISC-V picoSoC, and Synthesis in Qflow
 Day 1 started with an Introduction to the IC design component terminologies. An overview of the QFN-48 Package, layout of the chip, pads, core, die and IPs.
 RISC-V Instruction Set Architecture (ISA) was introduced and the RISC-V flow was explained. The flow starts with the C/C++/Java code being converted to an Instruction Set Architecture (ISA) by the compiler and the assembler converts this ISA into binary. The RTL implementation is done using Hardware Description Language (HDL) to create a netlist which is then laid out on the chip. 
 
@@ -20,4 +20,63 @@ PicoRV32 was introduced. It is a is a CPU core that implements the RISC-V RV32IM
 - Qflow : Tool Chain for complete RTS2GDS flow
 The required tools were installed and working was checked with a sample design file.
 ## Lab
-Sample Design layout in Magic
+Getting familiar with EDA Tools
+#### Opening Qflow
+![Qflow](https://user-images.githubusercontent.com/44549567/99880352-df3c6500-2c38-11eb-80a0-ef24581b87cf.PNG)
+
+#### Layout of Spi_Slave in Magic
+![layout of spi_slave in qflow](https://user-images.githubusercontent.com/44549567/99880558-152e1900-2c3a-11eb-8da7-926d8f2ac63e.PNG)
+
+#### Running Preparation and Synthesis in Qflow GUI
+![Qflow gui till synthesis step](https://user-images.githubusercontent.com/44549567/99880780-786c7b00-2c3b-11eb-9f8e-849e7d416341.PNG)
+
+## 2. Day 2: Running Pin Placement of picoRV32, understanding Floor Plan and Library Cells using the EDA tools
+Day-2 started with the dimensional analysis of the core and die of the chip. Important parameters such as **Utilization factor**, **Aspect Ratio** which are important in understanding the design were explained. Various concepts crucial for Floor planning and placement like **Pre-placed cells** and & their advantage of enhancing reusability, **Decoupling Capacitors** and how they help the design were clearly explained. A fully charged **Decoupling Capacitor** placed parallel to circuits to ensure proper supply of voltage and current by decoupling them from main supply voltage. This ensures proper local communication. The use of **Power Planning**, the concept of having a mesh of multiple Source and ground power lines, is made to ensure good  global communication and avoid issues like **Voltage droop** and **ground bounce**. Placement strategies like, step of placing **logical cell placement blockage** to avoid Placement and Routing tool to place any other cells, usage of **Buffers** to recreate the signal. 
+
+**Library Characterization**
+
+The Inputs required by the characterization software are **Process Design Kits (PDKs)** which contain DRC, LVS Rules, Spice Models, Library and User-Defined Specifications such as the Width between the power lines (the cell height), drive strength etc. The Design step involves 'Layout design' and 'Characterization Flow'. The GUNA software takes the inputs and gives GDS2, LEF and extracted Spice netlist as Outputs. The Characterization is classified into Timing, Noise and Power Characterization.
+
+**Characterization Flow Steps**
+- CMOS Spice model file with basic parameters
+- Extract the Spice Netlist
+- Analyze the Circuit behaviour
+- Read the Sub-circuit 
+- Read the Power Supply
+- Apply proper Stimulus
+- Provide necessary output capacitances (C_load)
+- Provide necessary simulation commands
+
+**Timing Characterization**
+
+- Rise Delay : Time taken for waveform to rise from 20% to 80% of VDD.
+- Fall Delay : Time taken for waveform to fall from 80% to 20% of VDD.
+- Propagation Delay : Measured between 50% of Input transition to 50% of Output transition.
+
+Continuing onto the Placement for picoRV32 after the Synthesis was done. Before proceeding for the placement, an understanding was made on Good and Bad Floorplan and placement methods. Keeping the design in point, analysis was done on where to put which ports, what are the ports that can be auto-grouped, which ports need to be added into a new group etc. After making the required changes to settings, placement was run and layout was analyzed.
+
+## Lab
+
+**Synthesis Report**
+![3 - Qflow report after synthesis](https://user-images.githubusercontent.com/44549567/99885120-b6c46300-2c58-11eb-835e-58cba9095785.PNG)
+
+**Setting Placement step in Qflow**
+![4 - Initial density change made in Qflow gui after synthesis](https://user-images.githubusercontent.com/44549567/99884996-f0e13500-2c57-11eb-9975-98fa4c8d720d.PNG)
+
+**Placement tool running**
+![#9 - Pin placement algorithm still running](https://user-images.githubusercontent.com/44549567/99885072-6cdb7d00-2c58-11eb-9afa-dedab47cb8d4.png)
+
+**Final layout after placement**
+![12 - picoRV32 layout after placement](https://user-images.githubusercontent.com/44549567/99885095-8aa8e200-2c58-11eb-8b27-2793a71882bd.PNG)
+
+**Dimensions after placement**
+![13 - Area of the picoRV32 in tkcon window after placement](https://user-images.githubusercontent.com/44549567/99885139-d78cb880-2c58-11eb-9b87-29913711413c.PNG)
+
+
+
+
+
+
+
+
+

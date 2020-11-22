@@ -58,19 +58,19 @@ Continuing onto the Placement for picoRV32 after the Synthesis was done. Before 
 
 ## Lab
 
-**Synthesis Report**
+#### Synthesis Report
 ![3 - Qflow report after synthesis](https://user-images.githubusercontent.com/44549567/99885120-b6c46300-2c58-11eb-835e-58cba9095785.PNG)
 
-**Setting Placement step in Qflow**
+#### Setting Placement step in Qflow
 ![4 - Initial density change made in Qflow gui after synthesis](https://user-images.githubusercontent.com/44549567/99884996-f0e13500-2c57-11eb-9975-98fa4c8d720d.PNG)
 
-**Placement tool running**
+#### Placement tool running
 ![#9 - Pin placement algorithm still running](https://user-images.githubusercontent.com/44549567/99886082-b7142c80-2c5f-11eb-8db6-8ef3a216dd9d.png)
 
-**Final layout after placement**
+#### Final layout after placement
 ![12 - picoRV32 layout after placement](https://user-images.githubusercontent.com/44549567/99885095-8aa8e200-2c58-11eb-8b27-2793a71882bd.PNG)
 
-**Dimensions after placement**
+ #### Dimensions after placement
 ![13 - Area of the picoRV32 in tkcon window after placement](https://user-images.githubusercontent.com/44549567/99885139-d78cb880-2c58-11eb-9b87-29913711413c.PNG)
 
 

@@ -32,7 +32,7 @@ Getting familiar with EDA Tools
 
 
 ## 2. Day 2: Running Pin Placement of picoRV32, understanding Floor Plan and Library Cells using the EDA tools
-Day-2 started with the dimensional analysis of the core and die of the chip. Important parameters such as **Utilization factor**, **Aspect Ratio** which are important in understanding the design were explained. Various concepts crucial for Floor planning and placement like **Pre-placed cells** and & their advantage of enhancing reusability, **Decoupling Capacitors** and how they help the design were clearly explained. A fully charged **Decoupling Capacitor** placed parallel to circuits to ensure proper supply of voltage and current by decoupling them from main supply voltage. This ensures proper local communication. The use of **Power Planning**, the concept of having a mesh of multiple Source and ground power lines, is made to ensure good  global communication and avoid issues like **Voltage droop** and **ground bounce**. Placement strategies like, step of placing **logical cell placement blockage** to avoid Placement and Routing tool to place any other cells, usage of **Buffers** to recreate the signal. 
+Day-2 started with the dimensional analysis of the core and die of the chip. Important parameters such as **Utilization factor**, **Aspect Ratio** which are important in understanding the design were studied. Various concepts crucial for Floor planning and placement like **Pre-placed cells** and & their advantage of enhancing reusability, **Decoupling Capacitors** and how they help the design were extensively discussed. A fully charged **Decoupling Capacitor** placed parallel to circuits to ensure proper supply of voltage and current by decoupling them from main supply voltage. This ensures proper local communication. The use of **Power Planning**, the concept of having a mesh of multiple Source and ground power lines, is made to ensure good  global communication and avoid issues like **Voltage droop** and **ground bounce**. Placement strategies like, step of placing **logical cell placement blockage** to avoid Placement and Routing tool to place any other cells, usage of **Buffers** to recreate the signal were studied.
 
 **Library Characterization**
 
@@ -50,9 +50,9 @@ The Inputs required by the characterization software are **Process Design Kits (
 
 **Timing Characterization**
 
-- Rise Delay : Time taken for waveform to rise from Slew Low Rise Threshold (20%) to Slew High Rise Threshold (80%) of VDD.
-- Fall Delay : Time taken for waveform to fall from Slew High Fall Threshold (80%) to Slew Low Fall Threshold (20%) of VDD.
-- Propagation Delay : Measured between 50% of Input transition to 50% of Output transition.
+- **Rise Delay :** Time taken for waveform to rise from Slew Low Rise Threshold (20%) to Slew High Rise Threshold (80%) of VDD.
+- **Fall Delay :** Time taken for waveform to fall from Slew High Fall Threshold (80%) to Slew Low Fall Threshold (20%) of VDD.
+- **Propagation Delay :** Measured between 50% of Input transition to 50% of Output transition.
 
 Continuing onto the Placement for picoRV32 after the Synthesis was done. Before proceeding for the placement, an understanding was made on Good and Bad Floorplan and placement methods. Keeping the design in point, analysis was done on where to put which ports, what are the ports that can be auto-grouped, which ports need to be added into a new group etc. After making the required changes to settings, placement was run and layout was analyzed.
 
@@ -76,7 +76,7 @@ Continuing onto the Placement for picoRV32 after the Synthesis was done. Before 
 
 ## 3. Day 3: Design and Characterization of cells using Magic Layout tool and ngspice
 
-Day-3 started with the usage of an important tool, **ngspice**. SPICE deck generation was explained and practiced. Spice deck consists of the parameters of the CMOS design starting with the pMOS, nMOS source, drain ,gate voltages, dimensions (W, L) also including power supply along with simulation commands. W/L ratio of MOS impact on the performance was practically evidenced. The parameter **Switching Threshold (Vm)**, deciding the robustness of the CMOS, was discussed. The concept of Stick diagram and Euler's path was explained and the impact of not considering the Euler's path was analyzed showing it's advantage of giving an optimal design. The layout with only Stick diagram was too clumsy and had too many metal contacts and connections. Considering each and every dimension, an extensive layout was designed.
+Day-3 started with the usage of an important tool, **ngspice**. SPICE deck generation was explained and practiced. Spice deck consists of the parameters of the CMOS design starting with the pMOS, nMOS source, drain ,gate voltages, dimensions (W, L) also including power supply along with simulation commands. W/L ratio of MOS impact on the performance was practically evidenced. The parameter **Switching Threshold (Vm)**, deciding the robustness of the CMOS, was discussed. The concept of Stick diagram and Euler's path was studied and the impact of not considering the Euler's path was analyzed showing it's advantage of giving an optimal design. The layout with only Stick diagram was too clumsy and had too many metal contacts and connections. Considering each and every dimension, an extensive layout was designed.
 
 **MOS Netlist description in Spice deck**
 
@@ -99,8 +99,49 @@ Vin in 0 2.5
 ```
 .tran 1n 20n
 ```
+**16-Mask CMOS Process**
+- **Selecting a Substrate :** A Substrate is selected to act as base layer over which other layers are formed.
+- **Creating Active regions for transistors :** Silicon Dioxide (SiO2) and Silicon Nitride (si3N4) are deposited, pockets are created for P and N regions using Lithography.
+- **N-Well and P-Well formation :** Ion implantation is done using Boron for P-well and Phosphorus for N-Well. Drive in diffusion is done by placing in high temperature furnace.
+- **Formation of Gate :** Depending on the requirements of NA (Doping Concentration) and Cox (OXide Capacitance), lithography and ion implantation are done.
+- **Lightly Doped Drain (LDD) Formation :** LDD regions are formed to avoid Hot electron effect and Short channel effect. Plasma anisotropic etching is used to leave small amount of oxide on side walls of Gate
+- **Source-Drain Formation :** Very thin layer of oxide is formed over the top to prevent chanelling effect and, Source and Drain are formed using lithography and ion implantation.
+- **Forming Contacts and interconnects :** Titanium is sputtered on the wafer surface and heated to form TiSi2 and TiN (2 types of metal contacts). Etching done by RCA Cleaning.
+- **Higher Level Metal formation :** Planarizing the top surface, depositing upper metal layers.
 
 ## Lab
+
+##### Spice Deck
+![000](https://user-images.githubusercontent.com/44549567/99905605-db234c80-2cf7-11eb-9508-d04603a3ff5a.png)
+
+#### Transient Characteristics
+![9 - Plot of Inverter Transient Char](https://user-images.githubusercontent.com/44549567/99905685-61d82980-2cf8-11eb-8a97-a72a14479eae.PNG)
+
+#### Pre-Layout waveform
+![23 - pre-layout simulation output](https://user-images.githubusercontent.com/44549567/99906002-7c130700-2cfa-11eb-8016-3e30b2c7b5cb.PNG)
+
+#### Post-Layout
+![21 - Post-layout of design](https://user-images.githubusercontent.com/44549567/99905925-fabb7480-2cf9-11eb-838a-f657e50dc61d.PNG)
+
+#### Post-Layout waveform
+![24 - Post-layout Simulation output](https://user-images.githubusercontent.com/44549567/99905938-16bf1600-2cfa-11eb-8ff4-d9d9d17a5919.PNG)
+
+
+## 4. Day 4: Timing Analysis, Clock Tree Synthesis and Signal Integrity
+The dependance of **Delay** of buffer on **Input Slew** and **Output Load Capacitance** was portrayed, and the concept of **Delay tables** which is based on those two parameters was extensively discussed giving the importance of 'levels of buffering', 'load driven by nodes' and types of buffer. The values not present in delay tables are extrapolated for precise results.
+
+**Setup & Hold Analysis** with the concepts of library setup and Hold times, Setup and Hold Slack, Data Arrival and Data Required time were studied in detail keeping in mind the **Jitter**. A detail study was done on the concepts of **Clock Tree Synthesis** like **H-Tree Algorithm** and the importance of **Clock Skew** in it.
+
+- **Setup time :** The interval of time before the edge of the clock where the data should remain stable for data to get transferred properly.
+- **Hold Time :** The interval after the edge of the clock where the data should remain stable for the data to get transferred properly.
+- **Setup Slack :** The window by which the Setup requirements are being satisfied. ( Data Required time - Data Arrival time )
+- **Hold Slack :** The window by which the hold requirements are being satisfied. ( Data Arrival time - Data Required time )
+
+
+
+
+
+
 
 
 

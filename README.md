@@ -120,6 +120,9 @@ Vin in 0 2.5
 #### Rise delay from transient behaviour
 ![111](https://user-images.githubusercontent.com/44549567/99907296-0d39ac00-2d02-11eb-953f-dba104ce0c0d.png)
 
+#### Pre-Layout Waveform
+![23 - pre-layout simulation output](https://user-images.githubusercontent.com/44549567/99907506-1b3bfc80-2d03-11eb-8cd8-a4468af27620.PNG)
+
 #### Post-Layout
 ![21 - Post-layout of design](https://user-images.githubusercontent.com/44549567/99905925-fabb7480-2cf9-11eb-838a-f657e50dc61d.PNG)
 
@@ -130,16 +133,52 @@ Vin in 0 2.5
 ## 4. Day 4: Timing Analysis, Clock Tree Synthesis and Signal Integrity
 The dependance of **Delay** of buffer on **Input Slew** and **Output Load Capacitance** was portrayed, and the concept of **Delay tables** which is based on those two parameters was extensively discussed giving the importance of 'levels of buffering', 'load driven by nodes' and types of buffer. The values not present in delay tables are extrapolated for precise results.
 
-**Setup & Hold Analysis** with the concepts of library setup and Hold times, Setup and Hold Slack, Data Arrival and Data Required time were studied in detail keeping in mind the **Jitter**. A detail study was done on the concepts of **Clock Tree Synthesis** like **H-Tree Algorithm** and the importance of **Clock Skew** in it.
+**Setup & Hold Analysis** with the concepts of library setup and Hold times, Setup and Hold Slack, Data Arrival and Data Required time were studied in detail keeping in mind the **Jitter**. A detail study was done on the concepts of **Clock Tree Synthesis** like **H-Tree Algorithm** and the importance of **Clock Skew** in it. The concepts of **Victim and Aggressor** in signal integrity, it's causes, effects, and remedies like shielding were analyzed.
 
 - **Setup time :** The interval of time before the edge of the clock where the data should remain stable for data to get transferred properly.
 - **Hold Time :** The interval after the edge of the clock where the data should remain stable for the data to get transferred properly.
 - **Setup Slack :** The window by which the Setup requirements are being satisfied. ( Data Required time - Data Arrival time )
 - **Hold Slack :** The window by which the hold requirements are being satisfied. ( Data Arrival time - Data Required time )
 
+**Commands to add Constraints in the SDC and Configuration files**
+```
+cd vsdflow/my_picorv32
+leafpad picorv32.sdc
+
+ // In the SDC File //
+ create_clock -name clk -period 2.5 -waveform {0 1.25} [get_ports clk]
+ 
+leafpad prelayout_sta.conf
+
+ // In the Config File //
+ read_liberty /usr/local/share/qflow/tech/osu018/osu018_stdcells.lib
+ read_verilog synthesis/picorv32.rtlnopwr.v
+ link_design picorv32
+ read_sdc picorv32.sdc
+ report_checks
+ 
+sta prelayout_sta.conf
+```
+**For Clock Propagation**
+```
+set_propagated_clock [all_clocks]
+report_checks
+report_checks -path_delay min -digits 4
+```
+
 ## Lab
 
+#### Commands for propagated clock
+![8 - Commands to set propagated clocks in STA terminal](https://user-images.githubusercontent.com/44549567/99908144-e3cf4f00-2d06-11eb-8cf9-5d1f0fcd9edb.PNG)
 
+#### STA with Slack, Data Required and Data Arrival times with Ideal clock
+![7 - data reqd  and data arrival time](https://user-images.githubusercontent.com/44549567/99907758-a49ffe80-2d04-11eb-8373-f894a1d76873.PNG)
+
+#### STA When Propagated clock was given
+![9 - STA after setting propagated clock](https://user-images.githubusercontent.com/44549567/99907815-1415ee00-2d05-11eb-8b51-1a7a2e1ad106.PNG)
+
+
+## 5. Day 5: Final steps for RTL2GDS 
 
 
 

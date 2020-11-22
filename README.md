@@ -115,10 +115,10 @@ Vin in 0 2.5
 ![000](https://user-images.githubusercontent.com/44549567/99905605-db234c80-2cf7-11eb-9508-d04603a3ff5a.png)
 
 #### Transient Characteristics
-![9 - Plot of Inverter Transient Char](https://user-images.githubusercontent.com/44549567/99905685-61d82980-2cf8-11eb-8a97-a72a14479eae.PNG)
+![1 - Plot of Out vs In for transient behaviour](https://user-images.githubusercontent.com/44549567/99907318-2f332e80-2d02-11eb-8bc8-ec69f5af3a58.PNG)
 
-#### Pre-Layout waveform
-![23 - pre-layout simulation output](https://user-images.githubusercontent.com/44549567/99906002-7c130700-2cfa-11eb-8016-3e30b2c7b5cb.PNG)
+#### Rise delay from transient behaviour
+![111](https://user-images.githubusercontent.com/44549567/99907296-0d39ac00-2d02-11eb-953f-dba104ce0c0d.png)
 
 #### Post-Layout
 ![21 - Post-layout of design](https://user-images.githubusercontent.com/44549567/99905925-fabb7480-2cf9-11eb-838a-f657e50dc61d.PNG)
@@ -136,6 +136,12 @@ The dependance of **Delay** of buffer on **Input Slew** and **Output Load Capaci
 - **Hold Time :** The interval after the edge of the clock where the data should remain stable for the data to get transferred properly.
 - **Setup Slack :** The window by which the Setup requirements are being satisfied. ( Data Required time - Data Arrival time )
 - **Hold Slack :** The window by which the hold requirements are being satisfied. ( Data Arrival time - Data Required time )
+
+## Lab
+
+
+
+
 
 
 

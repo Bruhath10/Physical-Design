@@ -2,7 +2,11 @@
 A Workshop on VLSI SoC / Physical Design using Open-Source EDA tools by The VSD corp. Workshop is conducted on a cloud-based platform known as VSD-IAT, a user-friendly platform to learn and implement the essential skills in physical design using open-source EDA tools.
 
 ## Contents
-1. Day 1: study various components of RISC-V microprocessor based SoC and review RISC-V picoSoC
+- 1. Day 1: study various components of RISC-V microprocessor based SoC and review RISC-V picoSoC
+- 2. Day 2: Running Pin Placement of picoRV32, understanding Floor Plan and Library Cells using the EDA tools
+- 3. Day 3: Design and Characterization of cells using Magic Layout tool and ngspice
+- 4. Day 4: Timing Analysis, Clock Tree Synthesis and Signal Integrity
+- 5. Day 5: Final steps for RTL2GDS
 
 ## 1. Day 1: Study of RISC-V microprocessor based SoC, review RISC-V picoSoC, and Synthesis in Qflow
 Day 1 started with an Introduction to the IC design component terminologies. An overview of the QFN-48 Package, layout of the chip, pads, core, die and IPs.
@@ -180,10 +184,70 @@ report_checks -path_delay min -digits 4
 
 ## 5. Day 5: Final steps for RTL2GDS 
 
+#### Routing and Design rule check
+Starting with the concepts of routing, **Maze Routing - Lee's Algorithm** and it's advantages were studied, the algorithm generates a routing grid and labels it in such a way that, multiple possible routing paths are created and the best one is chosen. The **DRC** rules and considerations were discussed. The Parasitics Extraction in the **SPEF (Standard Parasitics Exchange Format) IEEE 1481-1999** format, the SPEF Header and the representation of parasitics were studied in detail. In SPEF, the 'Port' details consists of name, it's type (Input/Output), Load, Co-ordinate, Driver, Waveform shape (rise/fall slew), and the 'Net' detail consist of Driver, Driver type, Receiver, Distributed Resistances and Capacitances.
+
+**SPEF Header format**
+```
+*SPEF "IEEE 1481-1999"
+*DATE "xxx xxx xxx, xxx"
+*DESIGN "xxx"
+*VENDOR "xxx"
+*PROGRAM "xxx"
+*VERSION "xxx"
+*DELIMITER :
+*T_UNIT 1ps
+```
+**SPEF format**
+```
+*NAME_MAP
+xxx         // Ports details //
+
+*CONN
+xxx         // Connection details // 
+
+*CAP
+xxx         // Load Capacitances of net //
+
+*RES
+xxx         // Resistances of net //
+*
+
+*END
+```
+
+## LAB
+
+#### Routing 
+![1 - Routing picorv32 with default settings](https://user-images.githubusercontent.com/44549567/99997962-ebb0f100-2de3-11eb-914a-0cc1e22ee04d.PNG)
+
+#### Routing Done
+![5 - Routing done](https://user-images.githubusercontent.com/44549567/99998054-1438eb00-2de4-11eb-8ec5-629e0e134b7e.PNG)
+
+#### STA post-routing
+![6 - Running STA after routing](https://user-images.githubusercontent.com/44549567/99998101-27e45180-2de4-11eb-8a84-07b7571ca745.PNG)
+
+#### Pre-Layout Clock Frequency
+![9 - Pre-layout frequency](https://user-images.githubusercontent.com/44549567/99998162-3fbbd580-2de4-11eb-92e4-bca7c9d0f9a7.PNG)
+
+#### Post-Layout Clock Frequency
+![11 - Post-layout frequency](https://user-images.githubusercontent.com/44549567/99998209-519d7880-2de4-11eb-9569-e15c6eb758dd.PNG)
 
 
+At the end of Day-5, the complete RTL2GDS flow was successfully done using Open-Source EDA Tools.
 
+**RTL2GDS Flow**
+- Synthesis
+- Floorplan and Power planning
+- Placement
+- Clock Tree Synthesis
+- Signal Routing
+- Sign-off
 
+## Acknowledgements :
+
+- Kunal Ghosh, Co-founder (VSD Corp. Pvt. Ltd)
+- Nickson P Jose, Teaching Assistant (VSD Corp. Pvt. Ltd)
 
 
 

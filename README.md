@@ -31,6 +31,9 @@ Getting familiar with EDA Tools
 #### Layout of Spi_Slave in Magic
 ![layout of spi_slave in qflow](https://user-images.githubusercontent.com/44549567/99880558-152e1900-2c3a-11eb-8da7-926d8f2ac63e.PNG)
 
+#### Settings
+![Qflow before synthesis (adding picorv32 v and setting top module and stop)](https://user-images.githubusercontent.com/44549567/99999582-611dc100-2de6-11eb-8351-a52935dc9e1b.PNG)
+
 #### Running Preparation and Synthesis in Qflow GUI
 ![Qflow gui till synthesis step](https://user-images.githubusercontent.com/44549567/99880780-786c7b00-2c3b-11eb-9f8e-849e7d416341.PNG)
 
@@ -189,14 +192,14 @@ Starting with the concepts of routing, **Maze Routing - Lee's Algorithm** and it
 
 **SPEF Header format**
 ```
-*SPEF "IEEE 1481-1999"
-*DATE "xxx xxx xxx, xxx"
-*DESIGN "xxx"
-*VENDOR "xxx"
-*PROGRAM "xxx"
-*VERSION "xxx"
-*DELIMITER :
-*T_UNIT 1ps
+*SPEF "IEEE 1481-1999"      // Format //
+*DATE "xxx xxx xxx, xxx"    // Date of measurement of parameters //
+*DESIGN "xxx"               // Design name //
+*VENDOR "xxx"               // Vendor name //
+*PROGRAM "xxx"              // Program name //
+*VERSION "xxx"              // Version details //
+*DELIMITER :                // Which Delimiter is used //
+*T_UNIT 1ps                 // Time Scale //
 ```
 **SPEF format**
 ```

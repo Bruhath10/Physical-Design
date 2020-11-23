@@ -14,17 +14,20 @@ RISC-V Instruction Set Architecture (ISA) was introduced and the RISC-V flow was
 
 PicoRV32 was introduced. It is a is a CPU core that implements the RISC-V RV32IMC Instruction Set. It's Pin diagram and salient features were discussed before moving to the PicoSoC whose brief layout and features were then discussed. Raven SoC which is a slight modification to PicoSoC was discussed before moving out for the synthesis.
 #### Necessary EDA Tools for Physical Design:
-- Yosys : RTL Netlist to Logic Synthesis
-- Graywolf : Floor Planning, Placement, Clock Tree Synthesis
-- Qrouter : Routing
-- OpenTimer : Static Timing Analysis
-- Magic : Layout
-- NGSpice : Pre-layout and Post-layout spice simulations
-- eSim : Circuit Design and Simulations
-- Qflow : Tool Chain for complete RTS2GDS flow
+- **Yosys** : RTL Netlist to Logic Synthesis
+- **Graywolf** : Floor Planning, Placement, Clock Tree Synthesis
+- **Qrouter** : Routing
+- **OpenTimer** : Static Timing Analysis
+- **Magic** : Layout
+- **NGSpice** : Pre-layout and Post-layout spice simulations
+- **eSim** : Circuit Design and Simulations
+- **Qflow** : Tool Chain for complete RTS2GDS flow
+
 The required tools were installed and working was checked with a sample design file.
+
 ## Lab
 Getting familiar with EDA Tools
+
 #### Opening Qflow
 ![Qflow](https://user-images.githubusercontent.com/44549567/99880352-df3c6500-2c38-11eb-80a0-ef24581b87cf.PNG)
 

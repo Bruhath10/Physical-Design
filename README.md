@@ -217,7 +217,6 @@ xxx         // Load Capacitances of net //
 
 *RES
 xxx         // Resistances of net //
-*
 
 *END
 ```

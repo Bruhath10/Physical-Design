@@ -34,7 +34,7 @@ Getting familiar with EDA Tools
 #### Layout of Spi_Slave in Magic
 ![layout of spi_slave in qflow](https://user-images.githubusercontent.com/44549567/99880558-152e1900-2c3a-11eb-8da7-926d8f2ac63e.PNG)
 
-#### Settings
+#### Setting the Technology and Top most module
 ![Qflow before synthesis (adding picorv32 v and setting top module and stop)](https://user-images.githubusercontent.com/44549567/99999582-611dc100-2de6-11eb-8351-a52935dc9e1b.PNG)
 
 #### Running Preparation and Synthesis in Qflow GUI

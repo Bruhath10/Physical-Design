@@ -74,6 +74,12 @@ Continuing onto the Placement for picoRV32 after the Synthesis was done. Before 
 #### Setting Placement step in Qflow
 ![4 - Initial density change made in Qflow gui after synthesis](https://user-images.githubusercontent.com/44549567/99884996-f0e13500-2c57-11eb-9975-98fa4c8d720d.PNG)
 
+#### Pin Arrangement
+![5 - Arrange Pins window after Auto-grouping of vectors](https://user-images.githubusercontent.com/44549567/100360979-9d883180-301f-11eb-9f4b-e74577e17a31.PNG)
+
+#### Creating a new group for clock and reset
+![7 - Creating a new group and adding clk and reset to it in pin arrangement](https://user-images.githubusercontent.com/44549567/100361071-ba246980-301f-11eb-949b-37b83db95eaa.PNG)
+
 #### Placement tool running
 ![#9 - Pin placement algorithm still running](https://user-images.githubusercontent.com/44549567/99886082-b7142c80-2c5f-11eb-8db6-8ef3a216dd9d.png)
 

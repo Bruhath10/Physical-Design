@@ -1,5 +1,5 @@
 # Physical design using Open-Source EDA Tools 
-A Workshop on VLSI SoC / Physical Design using Open-Source EDA tools by The VSD corp. Workshop is conducted on a cloud-based platform known as VSD-IAT, a user-friendly platform to learn and implement the essential skills in physical design using open-source EDA tools.
+VLSI SoC / Physical Design using Open-Source EDA tools by The VSD corp. done on a cloud-based platform known as VSD-IAT, a user-friendly platform to learn and implement the essential skills in physical design using open-source EDA tools.
 
 ## Contents
 - 1. Day 1: Study various components of RISC-V microprocessor based SoC and review RISC-V picoSoC

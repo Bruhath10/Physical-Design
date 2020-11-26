@@ -148,7 +148,10 @@ Vin in 0 2.5
 #### Pre-Layout Waveform
 ![23 - pre-layout simulation output](https://user-images.githubusercontent.com/44549567/99907506-1b3bfc80-2d03-11eb-8cd8-a4468af27620.PNG)
 
-#### Post-Layout
+#### Magic Layout using tcl script
+![18 - Custom layout after running the tcl in tkcon](https://user-images.githubusercontent.com/44549567/100368568-be558480-3029-11eb-9533-3d1f2175faa2.PNG)
+
+#### Manual Placing of Contacts and labelling
 ![21 - Post-layout of design](https://user-images.githubusercontent.com/44549567/99905925-fabb7480-2cf9-11eb-838a-f657e50dc61d.PNG)
 
 #### Post-Layout waveform

@@ -2,7 +2,7 @@
 A Workshop on VLSI SoC / Physical Design using Open-Source EDA tools by The VSD corp. Workshop is conducted on a cloud-based platform known as VSD-IAT, a user-friendly platform to learn and implement the essential skills in physical design using open-source EDA tools.
 
 ## Contents
-- 1. Day 1: study various components of RISC-V microprocessor based SoC and review RISC-V picoSoC
+- 1. Day 1: Study various components of RISC-V microprocessor based SoC and review RISC-V picoSoC
 - 2. Day 2: Running Pin Placement of picoRV32, understanding Floor Plan and Library Cells using the EDA tools
 - 3. Day 3: Design and Characterization of cells using Magic Layout tool and ngspice
 - 4. Day 4: Timing Analysis, Clock Tree Synthesis and Signal Integrity

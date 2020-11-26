@@ -133,7 +133,7 @@ Vin in 0 2.5
 #### Transient Characteristics
 ![1 - Plot of Out vs In for transient behaviour](https://user-images.githubusercontent.com/44549567/99907318-2f332e80-2d02-11eb-8bc8-ec69f5af3a58.PNG)
 
-#### Rise delay from transient behaviour
+#### Rise propagation-delay from transient behaviour
 ![111](https://user-images.githubusercontent.com/44549567/99907296-0d39ac00-2d02-11eb-953f-dba104ce0c0d.png)
 
 #### Pre-Layout Waveform

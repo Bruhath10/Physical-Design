@@ -136,6 +136,9 @@ Vin in 0 2.5
 #### Switching Threshold
 ![000](https://user-images.githubusercontent.com/44549567/100364962-d1198a80-3024-11eb-893a-ac2ad19225a7.png)
 
+#### Spice deck for transient analysis
+![7 - Inverter Transient Char  SPICE deck file](https://user-images.githubusercontent.com/44549567/100365306-513ff000-3025-11eb-874d-34c784554bff.PNG)
+
 #### Transient Characteristics
 ![1 - Plot of Out vs In for transient behaviour](https://user-images.githubusercontent.com/44549567/99907318-2f332e80-2d02-11eb-8bc8-ec69f5af3a58.PNG)
 

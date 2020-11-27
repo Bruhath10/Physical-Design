@@ -2,13 +2,13 @@
 VLSI SoC / Physical Design using Open-Source EDA tools by The VSD corp. done on a cloud-based platform known as VSD-IAT, a user-friendly platform to learn and implement the essential skills in physical design using open-source EDA tools.
 
 ## Contents
-- 1. Day 1: Study various components of RISC-V microprocessor based SoC and review RISC-V picoSoC
-- 2. Day 2: Running Pin Placement of picoRV32, understanding Floor Plan and Library Cells using the EDA tools
-- 3. Day 3: Design and Characterization of cells using Magic Layout tool and ngspice
-- 4. Day 4: Timing Analysis, Clock Tree Synthesis and Signal Integrity
-- 5. Day 5: Final steps for RTL2GDS
+- 1. Study various components of RISC-V microprocessor based SoC and review RISC-V picoSoC
+- 2. Running Pin Placement of picoRV32, understanding Floor Plan and Library Cells using the EDA tools
+- 3. Design and Characterization of cells using Magic Layout tool and ngspice
+- 4. Timing Analysis, Clock Tree Synthesis and Signal Integrity
+- 5. Final steps for RTL2GDS
 
-## 1. Day 1: Study of RISC-V microprocessor based SoC, review RISC-V picoSoC, and Synthesis in Qflow
+## 1. Study of RISC-V microprocessor based SoC, review RISC-V picoSoC, and Synthesis in Qflow
 Day 1 started with an Introduction to the IC design component terminologies. An overview of the QFN-48 Package, layout of the chip, pads, core, die and IPs.
 RISC-V Instruction Set Architecture (ISA) was introduced and the RISC-V flow was explained. The flow starts with the C/C++/Java code being converted to an Instruction Set Architecture (ISA) by the compiler and the assembler converts this ISA into binary. The RTL implementation is done using Hardware Description Language (HDL) to create a netlist which is then laid out on the chip. 
 
@@ -41,7 +41,7 @@ Getting familiar with EDA Tools
 ![Qflow gui till synthesis step](https://user-images.githubusercontent.com/44549567/99880780-786c7b00-2c3b-11eb-9f8e-849e7d416341.PNG)
 
 
-## 2. Day 2: Running Pin Placement of picoRV32, understanding Floor Plan and Library Cells using the EDA tools
+## 2. Running Pin Placement of picoRV32, understanding Floor Plan and Library Cells using the EDA tools
 Day-2 started with the dimensional analysis of the core and die of the chip. Important parameters such as **Utilization factor**, **Aspect Ratio** which are important in understanding the design were studied. Various concepts crucial for Floor planning and placement like **Pre-placed cells** and & their advantage of enhancing reusability, **Decoupling Capacitors** and how they help the design were extensively discussed. A fully charged **Decoupling Capacitor** placed parallel to circuits to ensure proper supply of voltage and current by decoupling them from main supply voltage. This ensures proper local communication. The use of **Power Planning**, the concept of having a mesh of multiple Source and ground power lines, is made to ensure good  global communication and avoid issues like **Voltage droop** and **ground bounce**. Placement strategies like, step of placing **logical cell placement blockage** to avoid Placement and Routing tool to place any other cells, usage of **Buffers** to recreate the signal were studied.
 
 **Library Characterization**
@@ -90,7 +90,7 @@ Continuing onto the Placement for picoRV32 after the Synthesis was done. Before 
 ![13 - Area of the picoRV32 in tkcon window after placement](https://user-images.githubusercontent.com/44549567/99885139-d78cb880-2c58-11eb-9b87-29913711413c.PNG)
 
 
-## 3. Day 3: Design and Characterization of cells using Magic Layout tool and ngspice
+## 3. Design and Characterization of cells using Magic Layout tool and ngspice
 
 Day-3 started with the usage of an important tool, **ngspice**. SPICE deck generation was explained and practiced. Spice deck consists of the parameters of the CMOS design starting with the pMOS, nMOS source, drain ,gate voltages, dimensions (W, L) also including power supply along with simulation commands. W/L ratio of MOS impact on the performance was practically evidenced. The parameter **Switching Threshold (Vm)**, deciding the robustness of the CMOS, was discussed. The concept of Stick diagram and Euler's path was studied and the impact of not considering the Euler's path was analyzed showing it's advantage of giving an optimal design. The layout with only Stick diagram was too clumsy and had too many metal contacts and connections. Considering each and every dimension, an extensive layout was designed.
 
@@ -158,7 +158,7 @@ Vin in 0 2.5
 ![24 - Post-layout Simulation output](https://user-images.githubusercontent.com/44549567/99905938-16bf1600-2cfa-11eb-8ff4-d9d9d17a5919.PNG)
 
 
-## 4. Day 4: Timing Analysis, Clock Tree Synthesis and Signal Integrity
+## 4. Timing Analysis, Clock Tree Synthesis and Signal Integrity
 The dependance of **Delay** of buffer on **Input Slew** and **Output Load Capacitance** was portrayed, and the concept of **Delay tables** which is based on those two parameters was extensively discussed giving the importance of 'levels of buffering', 'load driven by nodes' and types of buffer. The values not present in delay tables are extrapolated for precise results.
 
 **Setup & Hold Analysis** with the concepts of library setup and Hold times, Setup and Hold Slack, Data Arrival and Data Required time were studied in detail keeping in mind the **Jitter**. A detail study was done on the concepts of **Clock Tree Synthesis** like **H-Tree Algorithm** and the importance of **Clock Skew** in it. The concepts of **Victim and Aggressor** in signal integrity, it's causes, effects, and remedies like shielding were analyzed.
@@ -206,7 +206,7 @@ report_checks -path_delay min -digits 4
 ![9 - STA after setting propagated clock](https://user-images.githubusercontent.com/44549567/99907815-1415ee00-2d05-11eb-8b51-1a7a2e1ad106.PNG)
 
 
-## 5. Day 5: Final steps for RTL2GDS 
+## 5. Final steps for RTL2GDS 
 
 #### Routing and Design rule check
 Starting with the concepts of routing, **Maze Routing - Lee's Algorithm** and it's advantages were studied, the algorithm generates a routing grid and labels it in such a way that, multiple possible routing paths are created and the best one is chosen. The **DRC** rules and considerations were discussed. The Parasitics Extraction in the **SPEF (Standard Parasitics Exchange Format) IEEE 1481-1999** format, the SPEF Header and the representation of parasitics were studied in detail. In SPEF, the 'Port' details consists of name, it's type (Input/Output), Load, Co-ordinate, Driver, Waveform shape (rise/fall slew), and the 'Net' detail consist of Driver, Driver type, Receiver, Distributed Resistances and Capacitances.

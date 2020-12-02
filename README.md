@@ -9,10 +9,11 @@ VLSI SoC / Physical Design using Open-Source EDA tools by The VSD corp. done on 
 - 5. Final steps for RTL2GDS
 
 ## 1. Study of RISC-V microprocessor based SoC, review RISC-V picoSoC, and Synthesis in Qflow
-Day 1 started with an Introduction to the IC design component terminologies. An overview of the QFN-48 Package, layout of the chip, pads, core, die and IPs.
-RISC-V Instruction Set Architecture (ISA) was introduced and the RISC-V flow was explained. The flow starts with the C/C++/Java code being converted to an Instruction Set Architecture (ISA) by the compiler and the assembler converts this ISA into binary. The RTL implementation is done using Hardware Description Language (HDL) to create a netlist which is then laid out on the chip. 
+I started working on the IC design component terminologies. An overview of the QFN-48 Package, layout of the chip, pads, core, die and IPs.
+RISC-V Instruction Set Architecture (ISA) was overviewed and the RISC-V flow was studied. The flow starts with the C/C++/Java code being converted to an Instruction Set Architecture (ISA) by the compiler and the assembler converts this ISA into binary. The RTL implementation is done using Hardware Description Language (HDL) to create a netlist which is then laid out on the chip. 
 
-PicoRV32 was introduced. It is a is a CPU core that implements the RISC-V RV32IMC Instruction Set. It's Pin diagram and salient features were discussed before moving to the PicoSoC whose brief layout and features were then discussed. Raven SoC which is a slight modification to PicoSoC was discussed before moving out for the synthesis.
+PicoRV32 CPU core was Analyzed. It is a is a CPU core that implements the RISC-V RV32IMC Instruction Set. It's Pin diagram and salient features were discussed before moving to the PicoSoC whose brief layout and features were then discussed. Raven SoC which is a slight modification to PicoSoC was discussed before moving out for the synthesis.
+
 #### Necessary EDA Tools for Physical Design:
 - **Yosys** : RTL Netlist to Logic Synthesis
 - **Graywolf** : Floor Planning, Placement, Clock Tree Synthesis
@@ -42,7 +43,7 @@ Getting familiar with EDA Tools
 
 
 ## 2. Running Pin Placement of picoRV32, understanding Floor Plan and Library Cells using the EDA tools
-Day-2 started with the dimensional analysis of the core and die of the chip. Important parameters such as **Utilization factor**, **Aspect Ratio** which are important in understanding the design were studied. Various concepts crucial for Floor planning and placement like **Pre-placed cells** and & their advantage of enhancing reusability, **Decoupling Capacitors** and how they help the design were extensively discussed. A fully charged **Decoupling Capacitor** placed parallel to circuits to ensure proper supply of voltage and current by decoupling them from main supply voltage. This ensures proper local communication. The use of **Power Planning**, the concept of having a mesh of multiple Source and ground power lines, is made to ensure good  global communication and avoid issues like **Voltage droop** and **ground bounce**. Placement strategies like, step of placing **logical cell placement blockage** to avoid Placement and Routing tool to place any other cells, usage of **Buffers** to recreate the signal were studied.
+The dimensional analysis of the core and die of the chip were studied. Important parameters such as **Utilization factor**, **Aspect Ratio** which are important in understanding the design were studied. Various concepts crucial for Floor planning and placement like **Pre-placed cells** and & their advantage of enhancing reusability, **Decoupling Capacitors** and how they help the design were extensively discussed. A fully charged **Decoupling Capacitor** placed parallel to circuits to ensure proper supply of voltage and current by decoupling them from main supply voltage. This ensures proper local communication. The use of **Power Planning**, the concept of having a mesh of multiple Source and ground power lines, is made to ensure good  global communication and avoid issues like **Voltage droop** and **ground bounce**. Placement strategies like, step of placing **logical cell placement blockage** to avoid Placement and Routing tool to place any other cells, usage of **Buffers** to recreate the signal were studied.
 
 **Library Characterization**
 
@@ -92,7 +93,7 @@ Continuing onto the Placement for picoRV32 after the Synthesis was done. Before 
 
 ## 3. Design and Characterization of cells using Magic Layout tool and ngspice
 
-Day-3 started with the usage of an important tool, **ngspice**. SPICE deck generation was explained and practiced. Spice deck consists of the parameters of the CMOS design starting with the pMOS, nMOS source, drain ,gate voltages, dimensions (W, L) also including power supply along with simulation commands. W/L ratio of MOS impact on the performance was practically evidenced. The parameter **Switching Threshold (Vm)**, deciding the robustness of the CMOS, was discussed. The concept of Stick diagram and Euler's path was studied and the impact of not considering the Euler's path was analyzed showing it's advantage of giving an optimal design. The layout with only Stick diagram was too clumsy and had too many metal contacts and connections. Considering each and every dimension, an extensive layout was designed.
+The usage of an important tool, **ngspice** was done. SPICE deck generation was learnt and practiced. Spice deck consists of the parameters of the CMOS design starting with the pMOS, nMOS source, drain ,gate voltages, dimensions (W, L) also including power supply along with simulation commands. W/L ratio of MOS impact on the performance was practically evidenced. The parameter **Switching Threshold (Vm)**, deciding the robustness of the CMOS, was discussed. The concept of Stick diagram and Euler's path was studied and the impact of not considering the Euler's path was analyzed showing it's advantage of giving an optimal design. The layout with only Stick diagram was too clumsy and had too many metal contacts and connections. Considering each and every dimension, an extensive layout was designed.
 
 **MOS Netlist description in Spice deck**
 
@@ -270,7 +271,7 @@ At the end of Day-5, the complete RTL2GDS flow was successfully done using Open-
 ## Acknowledgements :
 
 - Kunal Ghosh, Co-founder (VSD Corp. Pvt. Ltd)
-- Nickson P Jose, Teaching Assistant (VSD Corp. Pvt. Ltd)
+- Nickson P Jose (VSD Corp. Pvt. Ltd)
 
 
 

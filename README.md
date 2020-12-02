@@ -10,7 +10,7 @@ VLSI SoC / Physical Design using Open-Source EDA tools by The VSD corp. done on 
 
 ## 1. Study of RISC-V microprocessor based SoC, review RISC-V picoSoC, and Synthesis in Qflow
 I started working on the IC design component terminologies. An overview of the QFN-48 Package, layout of the chip, pads, core, die and IPs.
-RISC-V Instruction Set Architecture (ISA) was overviewed and the RISC-V flow was studied. The flow starts with the C/C++/Java code being converted to an Instruction Set Architecture (ISA) by the compiler and the assembler converts this ISA into binary. The RTL implementation is done using Hardware Description Language (HDL) to create a netlist which is then laid out on the chip. 
+RISC-V Instruction Set Architecture (ISA) was done and the RISC-V flow was studied. The flow starts with the C/C++/Java code being converted to an Instruction Set Architecture (ISA) by the compiler and the assembler converts this ISA into binary. The RTL implementation is done using Hardware Description Language (HDL) to create a netlist which is then laid out on the chip. 
 
 PicoRV32 CPU core was Analyzed. It is a is a CPU core that implements the RISC-V RV32IMC Instruction Set. It's Pin diagram and salient features were discussed before moving to the PicoSoC whose brief layout and features were then discussed. Raven SoC which is a slight modification to PicoSoC was discussed before moving out for the synthesis.
 

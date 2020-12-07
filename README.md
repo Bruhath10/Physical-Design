@@ -258,7 +258,7 @@ xxx         // Resistances of net //
 ![11 - Post-layout frequency](https://user-images.githubusercontent.com/44549567/99998209-519d7880-2de4-11eb-9569-e15c6eb758dd.PNG)
 
 
-At the end of Day-5, the complete RTL2GDS flow was successfully done using Open-Source EDA Tools.
+At the end, the complete RTL2GDS flow was successfully done using Open-Source EDA Tools.
 
 **RTL2GDS Flow**
 - Synthesis
